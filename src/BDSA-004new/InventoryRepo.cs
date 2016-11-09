@@ -8,9 +8,14 @@ namespace DesignPatterns
 {
     class InventoryRepo<T> : IData<T> where T : IEntity
     {
+        private InventoryContext _context;
+        public InventoryRepo(InventoryContext context)
+        {
+            this._context = context;
+        }
         public int Create(T item)
         {
-            throw new NotImplementedException();
+            _context.Products.Add(item);
         }
 
         public void Delete(T item)

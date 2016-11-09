@@ -11,11 +11,11 @@ namespace DesignPatterns
     public class InventoryContext : DbContext
     {
         public DbSet<Product> Products { get; set; }
-        public DbSet<Category> MyProperty { get; set; }
-    }
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlite("Filename=./coursebase.db");
+        public DbSet<Category> Categorys { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Filename=./Database.db");
+        }
     }
 
 }
